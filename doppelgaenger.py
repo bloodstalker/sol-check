@@ -60,9 +60,11 @@ class Doppelgaenger():
                         print(line[0:char_number - 1], end = '')
                         print(' ' + line[char_number-1:char_number] + ' ', end = '')
                         print(line[char_number:])
-                    if whitespace_counter > 10:
+                    if whitespace_counter > 60:
                         found_an_impostor = True
                         print(Colors.red + "Too many whiteapces..." + Colors.ENDC)
+                        print(Colors.red + "line number: " + repr(line_number) + Colors.ENDC)
+                        print(Colors.red + "column number: " + repr(char_number) + Colors.ENDC)
                     if ord(char) == 32: whitespace_counter += 1
                     else: whitespace_counter = 0
         if not found_an_impostor:
